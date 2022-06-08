@@ -1,8 +1,19 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import Context from '../context/Context';
 
 function Table() {
-  const { data } = useContext(Context);
+  const { data, filterByName } = useContext(Context);
+
+  const [renderData, setRenderData] = useState({});
+
+  useEffect(() => {
+    if (data) {
+      const filter = data.filter((planet) => planet.name
+        .toLowerCase().includes(filterByName.name));
+      setRenderData(filter);
+    }
+  }, [data, filterByName]);
+
   return (
     <table>
       <thead>
@@ -23,7 +34,7 @@ function Table() {
         </tr>
       </thead>
       <tbody>
-        { data !== undefined && data.map((planet) => (
+        { renderData.length !== undefined && renderData.map((planet) => (
           <tr key={ planet.name }>
             <td>{ planet.name }</td>
             <td>{ planet.rotation_period }</td>
