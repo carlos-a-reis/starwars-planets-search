@@ -8,12 +8,14 @@ function Filters() {
     filterByNumericValues,
   } = useContext(Context);
 
-  const [optionsType, setOptionsType] = useState([
+  const options = [
     'population',
     'orbital_period',
     'diameter',
     'rotation_period',
-    'surface_water']);
+    'surface_water',
+  ];
+  const [optionsType, setOptionsType] = useState(options);
   const [optionsTypeDisabled, setOptionsTypeDisabled] = useState(false);
 
   const [type, setType] = useState(optionsType[0]);
@@ -37,6 +39,26 @@ function Filters() {
 
     const newOptionsType = optionsType.filter((option) => option !== type);
     setOptionsType(newOptionsType);
+  };
+
+  const deleteFilter = (deletedFilter) => {
+    if (deletedFilter === 'all') {
+      setFilterByNumericValues([]);
+
+      setOptionsType(options);
+
+      setOptionsTypeDisabled(false);
+    } else {
+      const newFilter = filterByNumericValues
+        .filter((filter) => filter.column !== deletedFilter);
+      setFilterByNumericValues(newFilter);
+
+      const newOptionsType = options.filter((option) => option === deletedFilter
+        || optionsType.includes(option));
+      setOptionsType(newOptionsType);
+
+      setOptionsTypeDisabled(false);
+    }
   };
 
   useEffect(() => {
@@ -87,6 +109,31 @@ function Filters() {
         </button>
 
       </form>
+
+      <button
+        type="button"
+        onClick={ () => deleteFilter('all') }
+        data-testid="button-remove-filters"
+      >
+        Remover Filtros
+      </button>
+
+      <ul>
+        { filterByNumericValues !== undefined && filterByNumericValues
+          .map((filter) => (
+            <li key={ filter.column } data-testid="filter">
+              <p>
+                {`${filter.column} ${filter.comparison} ${filter.value}`}
+              </p>
+              <button
+                type="button"
+                onClick={ () => deleteFilter(filter.column) }
+              >
+                X
+              </button>
+            </li>
+          )) }
+      </ul>
     </div>
   );
 }
