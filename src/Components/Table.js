@@ -2,17 +2,33 @@ import React, { useState, useContext, useEffect } from 'react';
 import Context from '../context/Context';
 
 function Table() {
-  const { data, filterByName } = useContext(Context);
+  const { data, filterByName, filterByNumericValues } = useContext(Context);
 
   const [renderData, setRenderData] = useState({});
 
   useEffect(() => {
     if (data) {
-      const filter = data.filter((planet) => planet.name
+      const filterPlanets = data.filter((planet) => planet.name
         .toLowerCase().includes(filterByName.name));
-      setRenderData(filter);
+
+      const resultFilter = filterByNumericValues.reduce((acc, filter) => (
+        acc.filter((planet) => {
+          switch (filter.comparison) {
+          case 'maior que':
+            return planet[filter.column] > Number(filter.value);
+          case 'menor que':
+            return planet[filter.column] < Number(filter.value);
+          case 'igual a':
+            return planet[filter.column] === filter.value;
+          default:
+            return filterPlanets;
+          }
+        })
+      ), filterPlanets);
+
+      setRenderData(resultFilter);
     }
-  }, [data, filterByName]);
+  }, [data, filterByName, filterByNumericValues]);
 
   return (
     <table>
@@ -33,6 +49,7 @@ function Table() {
           <th>URL</th>
         </tr>
       </thead>
+
       <tbody>
         { renderData.length !== undefined && renderData.map((planet) => (
           <tr key={ planet.name }>

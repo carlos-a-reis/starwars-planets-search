@@ -9,7 +9,8 @@ function App() {
   const [data, setData] = useState({});
   const [value, setValue] = useState({});
 
-  const [filterName, setFilterName] = useState('');
+  const [filterByName, setFilterByName] = useState({ name: '' });
+  const [filterByNumericValues, setFilterByNumericValues] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
@@ -23,13 +24,13 @@ function App() {
     if (data.length > 1) {
       setValue({
         data,
-        setFilterName,
-        filterByName: {
-          name: filterName,
-        },
+        filterByName,
+        setFilterByName,
+        filterByNumericValues,
+        setFilterByNumericValues,
       });
     }
-  }, [data, filterName]);
+  }, [data, filterByName, filterByNumericValues]);
 
   return (
     <Context.Provider value={ value }>
