@@ -11,11 +11,21 @@ function App() {
 
   const [filterByName, setFilterByName] = useState({ name: '' });
   const [filterByNumericValues, setFilterByNumericValues] = useState([]);
-  const [order, setOrder] = useState({});
+  const [order, setOrder] = useState({ column: 'name', sort: 'ASC' });
 
   useEffect(() => {
     const getData = async () => {
       const dataPlanets = await fetchPlanets();
+      const sortValue = -1;
+      dataPlanets.sort((a, b) => {
+        if (a.name < b.name) {
+          return sortValue;
+        }
+        if (a.name > b.name) {
+          return 1;
+        }
+        return 0;
+      });
       setData(dataPlanets);
     };
     getData();

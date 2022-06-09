@@ -37,9 +37,9 @@ function Table() {
   useEffect(() => {
     // ordena os planetas pelos filtros numericos
     const compare = (a, b) => {
-      const value = -1;
+      const sortValue = -1;
       if (Number(a[order.column]) < Number(b[order.column])) {
-        return value;
+        return sortValue;
       }
       if (Number(a[order.column]) > Number(b[order.column])) {
         return 1;
