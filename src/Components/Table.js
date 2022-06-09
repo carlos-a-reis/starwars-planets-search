@@ -2,15 +2,18 @@ import React, { useState, useContext, useEffect } from 'react';
 import Context from '../context/Context';
 
 function Table() {
-  const { data, filterByName, filterByNumericValues } = useContext(Context);
+  const { data, filterByName, filterByNumericValues, order } = useContext(Context);
 
   const [renderData, setRenderData] = useState({});
+  const [numericFilterPlanets, setNumericFilterPlanets] = useState([]);
 
   useEffect(() => {
     if (data) {
+      // filtro por nome
       const filterPlanets = data.filter((planet) => planet.name
         .toLowerCase().includes(filterByName.name));
 
+      // filtros numericos
       const resultFilter = filterByNumericValues.reduce((acc, filter) => (
         acc.filter((planet) => {
           switch (filter.comparison) {
@@ -26,9 +29,38 @@ function Table() {
         })
       ), filterPlanets);
 
+      setNumericFilterPlanets(resultFilter);
       setRenderData(resultFilter);
     }
   }, [data, filterByName, filterByNumericValues]);
+
+  useEffect(() => {
+    // ordena os planetas pelos filtros numericos
+    const compare = (a, b) => {
+      const value = -1;
+      if (Number(a[order.column]) < Number(b[order.column])) {
+        return value;
+      }
+      if (Number(a[order.column]) > Number(b[order.column])) {
+        return 1;
+      }
+      return 0;
+    };
+
+    if (order !== undefined && order.column) {
+      const numberFilter = numericFilterPlanets
+        .filter((filter) => filter[order.column] !== 'unknown');
+      numberFilter.sort(compare);
+      const unknownFilter = numericFilterPlanets
+        .filter((filter) => filter[order.column] === 'unknown');
+
+      if (order.sort === 'DESC') {
+        numberFilter.reverse();
+      }
+
+      setRenderData([...numberFilter, ...unknownFilter]);
+    }
+  }, [order, numericFilterPlanets]);
 
   return (
     <table>
@@ -53,7 +85,7 @@ function Table() {
       <tbody>
         { renderData.length !== undefined && renderData.map((planet) => (
           <tr key={ planet.name }>
-            <td>{ planet.name }</td>
+            <td data-testid="planet-name">{ planet.name }</td>
             <td>{ planet.rotation_period }</td>
             <td>{ planet.orbital_period }</td>
             <td>{ planet.diameter }</td>

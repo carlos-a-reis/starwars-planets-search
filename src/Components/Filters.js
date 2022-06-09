@@ -6,6 +6,7 @@ function Filters() {
     setFilterByName,
     setFilterByNumericValues,
     filterByNumericValues,
+    setOrder,
   } = useContext(Context);
 
   const options = [
@@ -22,9 +23,8 @@ function Filters() {
   const [operator, setOperator] = useState('maior que');
   const [value, setValue] = useState(0);
 
-  const handleFilterName = ({ target }) => {
-    setFilterByName({ name: target.value });
-  };
+  const [sortType, setSortType] = useState('population');
+  const [sortOrder, setSortOrder] = useState('ASC');
 
   const saveFilter = (event) => {
     event.preventDefault();
@@ -68,7 +68,11 @@ function Filters() {
 
   return (
     <div>
-      <input type="text" onChange={ handleFilterName } data-testid="name-filter" />
+      <input
+        type="text"
+        onChange={ ({ target }) => setFilterByName({ name: target.value }) }
+        data-testid="name-filter"
+      />
       <form>
 
         <select
@@ -106,6 +110,48 @@ function Filters() {
           data-testid="button-filter"
         >
           Filtrar
+        </button>
+
+      </form>
+
+      <form>
+        <select
+          onChange={ ({ target }) => setSortType(target.value) }
+          data-testid="column-sort"
+        >
+          { options.map((option) => <option key={ option }>{ option }</option>) }
+        </select>
+
+        <label htmlFor="ASC">
+          Ascendente
+          <input
+            type="radio"
+            value="ASC"
+            id="ASC"
+            name="sort"
+            onClick={ ({ target }) => setSortOrder(target.value) }
+            data-testid="column-sort-input-asc"
+          />
+        </label>
+
+        <label htmlFor="DESC">
+          Descendente
+          <input
+            type="radio"
+            value="DESC"
+            id="DESC"
+            name="sort"
+            onClick={ ({ target }) => setSortOrder(target.value) }
+            data-testid="column-sort-input-desc"
+          />
+        </label>
+
+        <button
+          type="button"
+          onClick={ () => setOrder({ column: sortType, sort: sortOrder }) }
+          data-testid="column-sort-button"
+        >
+          Ordenar
         </button>
 
       </form>

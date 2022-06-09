@@ -11,6 +11,7 @@ function App() {
 
   const [filterByName, setFilterByName] = useState({ name: '' });
   const [filterByNumericValues, setFilterByNumericValues] = useState([]);
+  const [order, setOrder] = useState({});
 
   useEffect(() => {
     const getData = async () => {
@@ -28,9 +29,11 @@ function App() {
         setFilterByName,
         filterByNumericValues,
         setFilterByNumericValues,
+        order,
+        setOrder,
       });
     }
-  }, [data, filterByName, filterByNumericValues]);
+  }, [data, filterByName, filterByNumericValues, order]);
 
   return (
     <Context.Provider value={ value }>
