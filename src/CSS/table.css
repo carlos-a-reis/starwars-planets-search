@@ -1,0 +1,5 @@
+.table-line{
+  max-width: 100px;
+  height: 100px;
+  overflow-wrap:break-word;
+}

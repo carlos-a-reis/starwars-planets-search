@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import Context from '../context/Context';
+import '../CSS/table.css';
 
 function Table() {
   const { data, filterByName, filterByNumericValues, order } = useContext(Context);
@@ -63,7 +64,7 @@ function Table() {
   }, [order, numericFilterPlanets]);
 
   return (
-    <table>
+    <table className="main-table">
       <thead>
         <tr>
           <th>Name</th>
@@ -75,10 +76,6 @@ function Table() {
           <th>Terrain</th>
           <th>Surface Water</th>
           <th>Population</th>
-          <th>Films</th>
-          <th>Created</th>
-          <th>Edited</th>
-          <th>URL</th>
         </tr>
       </thead>
 
@@ -94,10 +91,13 @@ function Table() {
             <td>{ planet.terrain }</td>
             <td>{ planet.surface_water }</td>
             <td>{ planet.population }</td>
-            <td>{ planet.films.map((film) => film) }</td>
-            <td>{ planet.created }</td>
-            <td>{ planet.edited }</td>
-            <td>{ planet.url }</td>
+            <td>
+              <a href={ planet.url } target="_blank" rel="noreferrer">
+                <button type="button">
+                  more info
+                </button>
+              </a>
+            </td>
           </tr>
         )) }
       </tbody>
