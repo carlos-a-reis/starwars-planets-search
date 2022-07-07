@@ -1,0 +1,100 @@
+.forms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.search-input {
+  width: calc(400px - 7.98px);
+  height: calc(35px - 5.97px);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filter-forms {
+  display: flex;
+  flex-direction: row;
+}
+
+.filters, .orders {
+  width: 230px;
+  height: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.filters {
+  margin-right: 25px;
+}
+
+.orders {
+  margin-left: 25px;
+  
+}
+
+.filters input {
+  width: calc(230px - 7.98px);
+  height: calc(35px - 5.97px);
+  margin: -0;
+  text-align: center;
+}
+
+.filters select {
+  width: 110px;
+  height: 30px;
+  text-align: center;
+}
+
+.orders select {
+  width: 230px;
+  height: 35px;
+  text-align: center;
+}
+
+.orders label {
+  width: 110px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+}
+
+.orders label input {
+  margin-right: 0;
+}
+
+.filter-button {
+  width: 65px;
+  height: 65px;
+  margin-top: 7.5px;
+  margin-right: 15px;
+  margin-left: 15px;
+  margin: 7.5px 15px;
+}
+
+.remove-filters {
+  width: 160px;
+  height: 35px;
+  margin: 20px 0px;
+}
+
+.filter-list {
+  align-self: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 454px;
+  height: 65px;
+}
+
+.filter-item {
+  width: 215px;
+  margin: 6px;
+  display: flex;
+  justify-content: space-between;
+}

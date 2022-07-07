@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import './CSS/App.css';
 import Context from './context/Context';
 import Filters from './Components/Filters';
 import Table from './Components/Table';
@@ -46,10 +46,12 @@ function App() {
   }, [data, filterByName, filterByNumericValues, order]);
 
   return (
-    <Context.Provider value={ value }>
-      <Filters />
-      <Table />
-    </Context.Provider>
+    <main className="App">
+      <Context.Provider value={ value }>
+        <Filters />
+        <Table />
+      </Context.Provider>
+    </main>
   );
 }
 

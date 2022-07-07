@@ -64,7 +64,7 @@ function Table() {
   }, [order, numericFilterPlanets]);
 
   return (
-    <table>
+    <table className="main-table">
       <thead>
         <tr>
           <th>Name</th>
