@@ -1,4 +1,21 @@
 .main-table {
-  width: 1200px;
-  height: 250px;
+  width: 1400px;
+  height: 416px;
+}
+
+.main-table thead tr {
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+.colum-title, .table-cel {
+  min-width: 100px;
+  min-height: 30px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 8px 10px;
+  border-right: 1px solid;
+  border-left: 1px solid;
 }

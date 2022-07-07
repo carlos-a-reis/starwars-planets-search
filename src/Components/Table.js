@@ -67,37 +67,37 @@ function Table() {
     <table className="main-table">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Rotation Period</th>
-          <th>Orbital Period</th>
-          <th>Diameter</th>
-          <th>Climate</th>
-          <th>Gravity</th>
-          <th>Terrain</th>
-          <th>Surface Water</th>
-          <th>Population</th>
+          <th className="colum-title">Name</th>
+          <th className="colum-title">Rotation Period</th>
+          <th className="colum-title">Orbital Period</th>
+          <th className="colum-title">Diameter</th>
+          <th className="colum-title">Climate</th>
+          <th className="colum-title">Gravity</th>
+          <th className="colum-title">Terrain</th>
+          <th className="colum-title">Surface Water</th>
+          <th className="colum-title">Population</th>
         </tr>
       </thead>
 
       <tbody>
         { renderData.length !== undefined && renderData.map((planet) => (
           <tr key={ planet.name }>
-            <td data-testid="planet-name">{ planet.name }</td>
-            <td>{ planet.rotation_period }</td>
-            <td>{ planet.orbital_period }</td>
-            <td>{ planet.diameter }</td>
-            <td>{ planet.climate }</td>
-            <td>{ planet.gravity }</td>
-            <td>{ planet.terrain }</td>
-            <td>{ planet.surface_water }</td>
-            <td>{ planet.population }</td>
-            <td>
+            <td className="table-cel">{ planet.name }</td>
+            <td className="table-cel">{ planet.rotation_period }</td>
+            <td className="table-cel">{ planet.orbital_period }</td>
+            <td className="table-cel">{ planet.diameter }</td>
+            <td className="table-cel">{ planet.climate }</td>
+            <td className="table-cel">{ planet.gravity }</td>
+            <td className="table-cel">{ planet.terrain }</td>
+            <td className="table-cel">{ planet.surface_water }</td>
+            <td className="table-cel">{ planet.population }</td>
+            {/* <td className="table-cel">
               <a href={ planet.url } target="_blank" rel="noreferrer">
                 <button type="button">
                   more info
                 </button>
               </a>
-            </td>
+            </td> */}
           </tr>
         )) }
       </tbody>

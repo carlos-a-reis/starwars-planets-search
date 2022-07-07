@@ -73,7 +73,6 @@ function Filters() {
         className="search-input"
         type="text"
         onChange={ ({ target }) => setFilterByName({ name: target.value }) }
-        data-testid="name-filter"
       />
 
       <div className="filter-forms">
@@ -86,14 +85,12 @@ function Filters() {
             value={ value }
             onChange={ ({ target }) => setValue(target.value) }
             disabled={ optionsTypeDisabled }
-            data-testid="value-filter"
           />
 
           <select
             value={ type }
             onChange={ ({ target }) => setType(target.value) }
             disabled={ optionsTypeDisabled }
-            data-testid="column-filter"
           >
             { optionsType.map((typeOption) => (
               <option key={ typeOption }>{ typeOption }</option>
@@ -104,7 +101,6 @@ function Filters() {
             value={ operator }
             onChange={ ({ target }) => setOperator(target.value) }
             disabled={ optionsTypeDisabled }
-            data-testid="comparison-filter"
           >
             <option>maior que</option>
             <option>menor que</option>
@@ -117,7 +113,6 @@ function Filters() {
           type="button"
           onClick={ saveFilter }
           disabled={ optionsTypeDisabled }
-          data-testid="button-filter"
         >
           Filtrar
         </button>
@@ -127,7 +122,6 @@ function Filters() {
           className="filter-button"
           type="button"
           onClick={ () => setOrder({ column: sortType, sort: sortOrder }) }
-          data-testid="column-sort-button"
         >
           Ordenar
         </button>
@@ -135,7 +129,6 @@ function Filters() {
         <form className="orders">
           <select
             onChange={ ({ target }) => setSortType(target.value) }
-            data-testid="column-sort"
           >
             { options.map((option) => <option key={ option }>{ option }</option>) }
           </select>
@@ -148,7 +141,6 @@ function Filters() {
               id="ASC"
               name="sort"
               onClick={ ({ target }) => setSortOrder(target.value) }
-              data-testid="column-sort-input-asc"
             />
           </label>
 
@@ -160,7 +152,6 @@ function Filters() {
               id="DESC"
               name="sort"
               onClick={ ({ target }) => setSortOrder(target.value) }
-              data-testid="column-sort-input-desc"
             />
           </label>
 
@@ -172,7 +163,6 @@ function Filters() {
         className="remove-filters"
         type="button"
         onClick={ () => deleteFilter('all') }
-        data-testid="button-remove-filters"
       >
         Remover Filtros
       </button>
@@ -184,7 +174,6 @@ function Filters() {
             <li
               className="filter-item"
               key={ filter.column }
-              data-testid="filter"
             >
               {`${filter.column} ${filter.comparison} ${filter.value}`}
               <button
