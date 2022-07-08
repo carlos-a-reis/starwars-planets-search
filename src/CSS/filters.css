@@ -1,3 +1,4 @@
+/* formulario de filtros */
 .forms {
   display: flex;
   flex-direction: column;
@@ -5,21 +6,52 @@
   margin-bottom: 30px;
 }
 
-.search-input {
-  width: calc(400px - 7.98px);
-  height: calc(35px - 5.97px);
-  margin-bottom: 20px;
-  text-align: center;
-}
-
+/* filtros */
 .filter-forms {
   display: flex;
   flex-direction: row;
 }
 
+/* configuração de estilo dos inputs */
+.search-input, .filters input, .filters select, 
+.orders select, .orders label {
+  background-color: transparent;
+  border: 3px solid #FFE81F;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+}
+
+/* input de pesquisa por nome */
+.search-input {
+  width: 390.04px;
+  height: 32.05px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* estilo dos inputs quando o mouse passa em cima */
+.search-input:hover, .filters input:hover,
+.filter-button:hover, .remove-filters:hover {
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+
+/* estilo dos inputs quando estão selecionados */
+.search-input:focus, .filters input:focus {
+  transform: scale(1.1);
+  outline: #FFE81F;
+}
+
+.filters select:focus, .orders select:focus, .orders select:hover {
+  outline: #FFE81F;
+}
+
+/* blocos com os filtros e ordenadores */
 .filters, .orders {
-  width: 230px;
-  height: 75px;
+  width: 250px;
+  height: 85px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -35,53 +67,80 @@
   
 }
 
+/* configuração dos elementos do bloco de filtros */
 .filters input {
-  width: calc(230px - 7.98px);
-  height: calc(30px - 5.97px);
+  width: 242.02px;
+  height: 27.06px;
   margin: -0;
   text-align: center;
 }
 
+/* filtros desabilitados */
+.filters input:disabled, .filters select:disabled, .filter-button:disabled {
+  transform: none;
+  opacity: 50%;
+}
+
+/* estilo dos selects */
 .filters select {
-  width: 110px;
-  height: 30px;
+  width: 120px;
+  height: 35px;
   text-align: center;
 }
 
+.filters select option {
+  background-color: black;
+}
+
+/* configuração dos elementos do bloco de ordenadores */
 .orders select {
-  width: 230px;
-  height: 30px;
+  width: 250px;
+  height: 35px;
   text-align: center;
+}
+
+.orders select option {
+  background-color: black;
 }
 
 .orders label {
-  width: 107.79px;
-  height: 27.79px;
+  width: 114.04px;
+  height: 29.04px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid;
 }
 
 .orders label input {
   margin-right: 0;
+  accent-color: #FFE81F;
 }
 
+/* botões de filtragem e ordenagem */
 .filter-button {
-  width: 65px;
-  height: 65px;
-  margin-top: 7.5px;
-  margin-right: 15px;
-  margin-left: 15px;
-  margin: 7.5px 15px;
+  width: 85px;
+  height: 85px;
+  margin: 0px 15px;
+  background-color: transparent;
+  color: white;
+  font-size: 18px;
+  border: 3px solid #FFE81F;
+  border-radius: 5px;
 }
 
+/* botão de remover filtros */
 .remove-filters {
   width: 160px;
-  height: 35px;
+  height: 40px;
   margin: 20px 0px;
+  background-color: transparent;
+  color: white;
+  font-size: 18px;
+  border: 3px solid #FFE81F;
+  border-radius: 5px;
 }
 
+/* lista dos filtros aplicados */
 .filter-list {
   align-self: center;
   display: flex;
@@ -92,7 +151,24 @@
 
 .filter-item {
   width: 215px;
-  margin: 6px;
+  height: 35px;
+  margin: 6px 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  color: white;
+  border-right: 1px solid #FFE81F;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.filter-item:last-child {
+  border-right: none;
+}
+
+/* botão de deletar o filtro */
+.filter-item button {
+  background-color: transparent;
+  border: 1px solid #FFE81F;
+  color: #FFE81F;
 }
