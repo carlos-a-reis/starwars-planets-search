@@ -1,21 +1,62 @@
-.main-table {
+/* div contando a tabela e a scrollbar */
+.main-content {
   width: 1400px;
   height: 416px;
+  overflow-y: scroll;
 }
 
+/* espaço para aparecer o primeiro item da tabela */
+.main-table {
+  margin-top: 80px;
+}
+
+/* linha header da tabela */
 .main-table thead tr {
-  background-color: black;
-  color: white;
+  background-color: #FFE81F;
+  color: black;
   text-align: center;
   font-weight: bold;
+  position: absolute;
+  margin-top: -80px;
 }
 
-.colum-title, .table-cel {
-  min-width: 100px;
-  min-height: 30px;
+.colum-title {
+  width: 154.4px;
+  height: 80px;
   text-align: center;
   vertical-align: middle;
-  padding: 8px 10px;
-  border-right: 1px solid;
-  border-left: 1px solid;
+  font-size: 20px;
+}
+
+/* linhas da tabela */
+.table-cel {
+  width: 154.4px;
+  height: 60px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 18px;
+  padding: 10px 0; 
+}
+
+/* celulas da tabela */
+.table-cel {
+  color: white;
+}
+
+/* estilo da scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  margin-block-start: 82px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FFE81F;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #CCBA18
 }

@@ -64,44 +64,46 @@ function Table() {
   }, [order, numericFilterPlanets]);
 
   return (
-    <table className="main-table">
-      <thead>
-        <tr>
-          <th className="colum-title">Name</th>
-          <th className="colum-title">Rotation Period</th>
-          <th className="colum-title">Orbital Period</th>
-          <th className="colum-title">Diameter</th>
-          <th className="colum-title">Climate</th>
-          <th className="colum-title">Gravity</th>
-          <th className="colum-title">Terrain</th>
-          <th className="colum-title">Surface Water</th>
-          <th className="colum-title">Population</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        { renderData.length !== undefined && renderData.map((planet) => (
-          <tr key={ planet.name }>
-            <td className="table-cel">{ planet.name }</td>
-            <td className="table-cel">{ planet.rotation_period }</td>
-            <td className="table-cel">{ planet.orbital_period }</td>
-            <td className="table-cel">{ planet.diameter }</td>
-            <td className="table-cel">{ planet.climate }</td>
-            <td className="table-cel">{ planet.gravity }</td>
-            <td className="table-cel">{ planet.terrain }</td>
-            <td className="table-cel">{ planet.surface_water }</td>
-            <td className="table-cel">{ planet.population }</td>
-            {/* <td className="table-cel">
-              <a href={ planet.url } target="_blank" rel="noreferrer">
-                <button type="button">
-                  more info
-                </button>
-              </a>
-            </td> */}
+    <div className="main-content">
+      <table className="main-table">
+        <thead>
+          <tr>
+            <th className="colum-title">Name</th>
+            <th className="colum-title">Rotation Period</th>
+            <th className="colum-title">Orbital Period</th>
+            <th className="colum-title">Diameter</th>
+            <th className="colum-title">Climate</th>
+            <th className="colum-title">Gravity</th>
+            <th className="colum-title">Terrain</th>
+            <th className="colum-title">Surface Water</th>
+            <th className="colum-title">Population</th>
           </tr>
-        )) }
-      </tbody>
-    </table>
+        </thead>
+
+        <tbody>
+          { renderData.length !== undefined && renderData.map((planet) => (
+            <tr key={ planet.name }>
+              <td className="table-cel">{ planet.name }</td>
+              <td className="table-cel">{ planet.rotation_period }</td>
+              <td className="table-cel">{ planet.orbital_period }</td>
+              <td className="table-cel">{ planet.diameter }</td>
+              <td className="table-cel">{ planet.climate }</td>
+              <td className="table-cel">{ planet.gravity }</td>
+              <td className="table-cel">{ planet.terrain }</td>
+              <td className="table-cel">{ planet.surface_water }</td>
+              <td className="table-cel">{ planet.population }</td>
+              {/* <td className="table-cel">
+                <a href={ planet.url } target="_blank" rel="noreferrer">
+                  <button type="button">
+                    more info
+                  </button>
+                </a>
+              </td> */}
+            </tr>
+          )) }
+        </tbody>
+      </table>
+    </div>
   );
 }
 
