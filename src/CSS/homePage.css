@@ -1,0 +1,15 @@
+html {
+  scroll-behavior: smooth;
+  overflow: hidden;
+}
+
+.home-page {
+  width: 100vw;
+  height: 100vh;
+
+}
+
+.home-img {
+  font-size: 100px;
+  color: white;
+}

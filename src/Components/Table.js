@@ -64,7 +64,7 @@ function Table() {
   }, [order, numericFilterPlanets]);
 
   return (
-    <div className="main-content">
+    <div className="main-content" id="table">
       <table className="main-table">
         <thead>
           <tr>
@@ -92,13 +92,6 @@ function Table() {
               <td className="table-cel">{ planet.terrain }</td>
               <td className="table-cel">{ planet.surface_water }</td>
               <td className="table-cel">{ planet.population }</td>
-              {/* <td className="table-cel">
-                <a href={ planet.url } target="_blank" rel="noreferrer">
-                  <button type="button">
-                    more info
-                  </button>
-                </a>
-              </td> */}
             </tr>
           )) }
         </tbody>

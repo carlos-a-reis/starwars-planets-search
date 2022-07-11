@@ -4,6 +4,7 @@ import Context from './context/Context';
 import Filters from './Components/Filters';
 import Table from './Components/Table';
 import fetchPlanets from './Helpers/FetchPlanets';
+import HomePage from './Components/HomePage';
 
 function App() {
   const [data, setData] = useState({});
@@ -47,6 +48,7 @@ function App() {
 
   return (
     <main className="App">
+      <HomePage />
       <Context.Provider value={ value }>
         <Filters />
         <Table />
