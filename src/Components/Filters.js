@@ -88,6 +88,7 @@ function Filters() {
           />
 
           <select
+            className="select-filter"
             value={ type }
             onChange={ ({ target }) => setType(target.value) }
             disabled={ optionsTypeDisabled }
@@ -98,6 +99,7 @@ function Filters() {
           </select>
 
           <select
+            className="select-comparation"
             value={ operator }
             onChange={ ({ target }) => setOperator(target.value) }
             disabled={ optionsTypeDisabled }

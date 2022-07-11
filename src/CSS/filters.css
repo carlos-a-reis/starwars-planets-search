@@ -33,18 +33,24 @@
 
 /* estilo dos inputs quando o mouse passa em cima */
 .search-input:hover, .filters input:hover,
-.filter-button:hover, .remove-filters:hover {
-  transition: 0.5s;
+.filter-button:hover, .remove-filters:hover,
+.filters select:hover, .orders select:hover,
+.orders label:hover {
+  box-shadow: inset 0 0 0.5em #FFE81F,
+  0 0 0.5em #FFE81F;
+  transition: 0.1s;
   transform: scale(1.1);
 }
 
 /* estilo dos inputs quando estão selecionados */
 .search-input:focus, .filters input:focus {
+  box-shadow: inset 0 0 0.5em #FFE81F,
+  0 0 0.5em #FFE81F;
   transform: scale(1.1);
   outline: #FFE81F;
 }
 
-.filters select:focus, .orders select:focus, .orders select:hover {
+.filters select:focus, .filters select:focus, .orders select:hover {
   outline: #FFE81F;
 }
 
@@ -82,8 +88,14 @@
 }
 
 /* estilo dos selects */
-.filters select {
-  width: 120px;
+.select-filter {
+  width: 135px;
+  height: 35px;
+  text-align: center;
+}
+
+.select-comparation {
+  width: 105px;
   height: 35px;
   text-align: center;
 }
