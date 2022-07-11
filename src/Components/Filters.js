@@ -69,6 +69,11 @@ function Filters() {
   return (
     <div className="forms">
 
+      { /* link para a home da página */ }
+      <a href="#home-page" className="home-link">
+        HOME
+      </a>
+
       <input
         className="search-input"
         type="text"

@@ -1,15 +1,18 @@
-html {
-  scroll-behavior: smooth;
-  overflow: hidden;
-}
-
 .home-page {
   width: 100vw;
   height: 100vh;
-
+  display: flex;
+  justify-content: center;
 }
 
 .home-img {
   font-size: 100px;
   color: white;
+  align-self: center;
+  position: absolute;
+}
+
+.table-link {
+  align-self: end;
+  margin-bottom: 50px;
 }
