@@ -22,7 +22,7 @@ function Filters() {
   const [optionsTypeDisabled, setOptionsTypeDisabled] = useState(false);
 
   const [type, setType] = useState(optionsType[0]);
-  const [operator, setOperator] = useState('maior que');
+  const [operator, setOperator] = useState('greater than');
   const [value, setValue] = useState(0);
 
   const [sortType, setSortType] = useState('population');
@@ -110,9 +110,9 @@ function Filters() {
             onChange={ ({ target }) => setOperator(target.value) }
             disabled={ optionsTypeDisabled }
           >
-            <option>maior que</option>
-            <option>menor que</option>
-            <option>igual a</option>
+            <option>greater than</option>
+            <option>less than</option>
+            <option>equal to</option>
           </select>
 
         </form>
@@ -122,7 +122,7 @@ function Filters() {
           onClick={ saveFilter }
           disabled={ optionsTypeDisabled }
         >
-          Filtrar
+          Filter
         </button>
 
         {/* formulario de ordem */}
@@ -131,7 +131,7 @@ function Filters() {
           type="button"
           onClick={ () => setOrder({ column: sortType, sort: sortOrder }) }
         >
-          Ordenar
+          Order
         </button>
 
         <form className="orders">
@@ -142,7 +142,7 @@ function Filters() {
           </select>
 
           <label htmlFor="ASC">
-            Ascendente
+            Ascending
             <input
               type="radio"
               value="ASC"
@@ -153,7 +153,7 @@ function Filters() {
           </label>
 
           <label htmlFor="DESC">
-            Descendente
+            Descending
             <input
               type="radio"
               value="DESC"
@@ -172,7 +172,7 @@ function Filters() {
         type="button"
         onClick={ () => deleteFilter('all') }
       >
-        Remover Filtros
+        Remove Filters
       </button>
 
       {/* lista de filtros */}

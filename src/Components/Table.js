@@ -19,11 +19,11 @@ function Table() {
       const resultFilter = filterByNumericValues.reduce((acc, filter) => (
         acc.filter((planet) => {
           switch (filter.comparison) {
-          case 'maior que':
+          case 'greater than':
             return planet[filter.column] > Number(filter.value);
-          case 'menor que':
+          case 'less than':
             return planet[filter.column] < Number(filter.value);
-          case 'igual a':
+          case 'equal to':
             return planet[filter.column] === filter.value;
           default:
             return filterPlanets;
