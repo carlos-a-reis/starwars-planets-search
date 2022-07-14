@@ -1,4 +1,5 @@
 import React from 'react';
+import arrow from '../images/arrow.png';
 import '../CSS/homePage.css';
 
 function HomePage() {
@@ -8,7 +9,7 @@ function HomePage() {
 
       { /* link para a parte da tabela da página */ }
       <a href="#table" className="table-link">
-        TABLE
+        <img className="arrow-table" src={ arrow } alt="arrow" />
       </a>
     </div>
   );

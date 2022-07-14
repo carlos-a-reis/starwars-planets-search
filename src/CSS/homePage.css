@@ -1,3 +1,4 @@
+/* página inicial */
 .home-page {
   width: 100vw;
   height: 100vh;
@@ -5,6 +6,7 @@
   justify-content: center;
 }
 
+/* logo da página */
 .home-img {
   font-size: 100px;
   color: white;
@@ -12,7 +14,18 @@
   position: absolute;
 }
 
+/* botão que leva para a página da tabela */
 .table-link {
   align-self: end;
   margin-bottom: 50px;
+}
+
+.arrow-table {
+  height: 25px;
+}
+
+/* efeito de quando o mouse passa pela seta de mudar de página */
+.arrow-table:hover {
+  transition: 0.1s;
+  transform: scale(1.3);
 }

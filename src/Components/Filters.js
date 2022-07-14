@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import Context from '../context/Context';
 import '../CSS/filters.css';
+import arrow from '../images/arrow.png';
 
 function Filters() {
   const {
@@ -71,7 +72,7 @@ function Filters() {
 
       { /* link para a home da página */ }
       <a href="#home-page" className="home-link">
-        HOME
+        <img className="arrow-home" src={ arrow } alt="arrow" />
       </a>
 
       <input
