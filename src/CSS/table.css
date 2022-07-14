@@ -6,6 +6,11 @@
   overflow-y: scroll;
 }
 
+/* função de bloquear os efeitos do ponteiro do mouse */
+.colum-title, .table-cel {
+  pointer-events: none;
+}
+
 /* espaço para aparecer o primeiro item da tabela */
 .main-table {
   margin-top: 80px;

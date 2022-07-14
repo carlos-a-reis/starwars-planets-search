@@ -44,7 +44,7 @@
 .search-input:hover, .filters input:hover,
 .filter-button:hover, .remove-filters:hover,
 .filters select:hover, .orders select:hover,
-.orders label:hover {
+.orders label:hover, .filter-item button:hover {
   box-shadow: inset 0 0 0.5em #FFE81F,
   0 0 0.5em #FFE81F;
   transition: 0.1s;
@@ -191,5 +191,6 @@
 .filter-item button {
   background-color: transparent;
   border: 1px solid #FFE81F;
+  border-radius: 5px;
   color: #FFE81F;
 }
