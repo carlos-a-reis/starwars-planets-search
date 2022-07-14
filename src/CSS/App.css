@@ -1,7 +1,13 @@
+/* conficurações de tamanho e display de toda a página */
 .App {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: black; 
+}
+
+/* configuração da div que contem os componentes de filtro e da table */
+.planets-search {
+  height: 100vh;
 }

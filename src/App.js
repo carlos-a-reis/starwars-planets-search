@@ -50,8 +50,10 @@ function App() {
     <main className="App">
       <HomePage />
       <Context.Provider value={ value }>
-        <Filters />
-        <Table />
+        <div className="planets-search">
+          <Filters />
+          <Table />
+        </div>
       </Context.Provider>
     </main>
   );

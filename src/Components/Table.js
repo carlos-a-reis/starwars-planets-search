@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import Context from '../context/Context';
 import '../CSS/table.css';
+import planets from '../Helpers/Planets';
 
 function Table() {
   const { data, filterByName, filterByNumericValues, order } = useContext(Context);
@@ -81,9 +82,16 @@ function Table() {
         </thead>
 
         <tbody>
+          { console.log(planets()) }
           { renderData.length !== undefined && renderData.map((planet) => (
             <tr key={ planet.name }>
-              <td className="table-cel">{ planet.name }</td>
+              <td className="table-cel planet-name">
+                <img
+                  src={ planets()[planet.name] || planets().YavinIV }
+                  alt={ planet.name }
+                />
+                <p>{ planet.name }</p>
+              </td>
               <td className="table-cel">{ planet.rotation_period }</td>
               <td className="table-cel">{ planet.orbital_period }</td>
               <td className="table-cel">{ planet.diameter }</td>
