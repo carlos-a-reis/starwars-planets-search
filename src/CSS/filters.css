@@ -189,13 +189,10 @@
   justify-content: space-between;
   align-items: center;
   color: white;
-  border-right: 1px solid #FFE81F;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-.filter-item:last-child {
-  border-right: none;
+  border: 1px solid #FFE81F;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin: 0 5px;
 }
 
 /* botão de deletar o filtro */
