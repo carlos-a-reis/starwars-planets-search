@@ -1,8 +1,8 @@
 /* div contando a tabela e a scrollbar */
 .main-content {
   width: 1400px;
-  height: 416px;
-  margin-bottom: 30px;
+  height: 430px;
+  margin-bottom: 20px;
   overflow-y: scroll;
 }
 

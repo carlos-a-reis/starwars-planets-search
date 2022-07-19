@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
   background-color: black; 
+  background-image: url("../images/Background.PNG");
 }
 
 /* configuração da div que contem os componentes de filtro e da table */

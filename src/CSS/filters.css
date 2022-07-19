@@ -216,10 +216,6 @@
     margin-right: 90px;
   }
 
-  .arrow-home {
-    height: 35px;
-  }
-
   /* configuração de estilo dos inputs */
   .search-input, .filters input, .filters select, 
   .orders select, .orders label {
