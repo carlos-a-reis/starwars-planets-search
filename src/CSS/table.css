@@ -124,8 +124,8 @@
 
   /* coluna com os nomes e imagens dos planetas */
   .planet-name img {
-    width: 140px;
-    height: 140px;
+    width: 130px;
+    height: 130px;
   }
 
   .planet-name p {
