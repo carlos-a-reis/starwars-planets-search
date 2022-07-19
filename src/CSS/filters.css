@@ -207,8 +207,8 @@
 @media screen and (min-width: 2000px) {
   /* formulario de filtros */
   .forms {
-    margin-top: 80px;
-    margin-bottom: 80px;
+    margin-top: 45px;
+    margin-bottom: 40px;
   }
 
   /* link para a página home */
@@ -288,7 +288,7 @@
   .remove-filters {
     width: 280px;
     height: 60px;
-    margin: 25px 0px;
+    margin: 25px 0px 40px 0px;
     font-size: 24px;
   }
 

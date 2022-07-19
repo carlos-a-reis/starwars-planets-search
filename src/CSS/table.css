@@ -90,3 +90,45 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #CCBA18
 }
+
+/* responsividade para telas com largura maior ou igual a 2000px */
+@media screen and (min-width: 2000px) {
+  /* div contando a tabela e a scrollbar */
+  .main-content {
+    width: 1900px;
+    height: 590px;
+  }
+
+  /* espaço para aparecer o primeiro item da tabela */
+  .main-table {
+    margin-top: 80px;
+  }
+
+  /* linha header da tabela */
+  .main-table thead tr {
+    margin-top: -80px;
+  }
+
+  .colum-title {
+    width: 211.1px;
+    height: 80px;
+    font-size: 26px;
+  }
+
+  /* linhas da tabela */
+  .table-cel {
+    width: 211.1px;
+    font-size: 24px;
+    padding: 25px 0; 
+  }
+
+  /* coluna com os nomes e imagens dos planetas */
+  .planet-name img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .planet-name p {
+    font-size: 28px;
+  } 
+}
