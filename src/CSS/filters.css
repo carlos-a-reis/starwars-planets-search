@@ -211,97 +211,97 @@
     margin-bottom: 80px;
   }
 
-/* link para a página home */
-.home-link {
-  margin-right: 90px;
-}
+  /* link para a página home */
+  .home-link {
+    margin-right: 90px;
+  }
 
-.arrow-home {
-  height: 35px;
-}
+  .arrow-home {
+    height: 35px;
+  }
 
-/* configuração de estilo dos inputs */
-.search-input, .filters input, .filters select, 
-.orders select, .orders label {
-  font-size: 22px;
-}
+  /* configuração de estilo dos inputs */
+  .search-input, .filters input, .filters select, 
+  .orders select, .orders label {
+    font-size: 22px;
+  }
 
-/* input de pesquisa por nome */
-.search-input {
-  width: 670.01px;
-  height: 50px;
-  margin-bottom: 45px;
-  font-size: 24px;
-}
+  /* input de pesquisa por nome */
+  .search-input {
+    width: 670.01px;
+    height: 50px;
+    margin-bottom: 45px;
+    font-size: 24px;
+  }
 
-/* blocos com os filtros e ordenadores */
-.filters, .orders {
-  width: 420px;
-  height: 110px;
-}
+  /* blocos com os filtros e ordenadores */
+  .filters, .orders {
+    width: 420px;
+    height: 110px;
+  }
 
-.filters {
-  margin-right: 45px;
-}
+  .filters {
+    margin-right: 45px;
+  }
 
-.orders {
-  margin-left: 45px;
-}
+  .orders {
+    margin-left: 45px;
+  }
 
-/* configuração dos elementos do bloco de filtros */
-.filters input {
-  width: 422.02px;
-  height: 37.06px;
-}
+  /* configuração dos elementos do bloco de filtros */
+  .filters input {
+    width: 422.02px;
+    height: 37.06px;
+  }
 
-/* estilo dos selects */
-.select-filter {
-  width: 205px;
-  height: 45px;
-}
+  /* estilo dos selects */
+  .select-filter {
+    width: 205px;
+    height: 45px;
+  }
 
-.select-comparation {
-  width: 205px;
-  height: 45px;
-}
+  .select-comparation {
+    width: 205px;
+    height: 45px;
+  }
 
-/* configuração dos elementos do bloco de ordenadores */
-.orders select {
-  width: 420px;
-  height: 45px;
-}
+  /* configuração dos elementos do bloco de ordenadores */
+  .orders select {
+    width: 420px;
+    height: 45px;
+  }
 
-.orders label {
-  width: 199.04px;
-  height: 39.04px;
-}
+  .orders label {
+    width: 199.04px;
+    height: 39.04px;
+  }
 
-/* botões de filtragem e ordenagem */
-.filter-button {
-  width: 115px;
-  height: 115px;
-  margin: 0px 25px;
-  font-size: 28px;
-}
+  /* botões de filtragem e ordenagem */
+  .filter-button {
+    width: 115px;
+    height: 115px;
+    margin: 0px 25px;
+    font-size: 28px;
+  }
 
-/* botão de remover filtros */
-.remove-filters {
-  width: 280px;
-  height: 60px;
-  margin: 25px 0px;
-  font-size: 24px;
-}
+  /* botão de remover filtros */
+  .remove-filters {
+    width: 280px;
+    height: 60px;
+    margin: 25px 0px;
+    font-size: 24px;
+  }
 
-/* lista dos filtros aplicados */
-.filter-list {
-  height: 40px;
-}
+  /* lista dos filtros aplicados */
+  .filter-list {
+    height: 40px;
+  }
 
-.filter-item {
-  width: 260px;
-  height: 40px;
-  padding: 0 20px;
-  margin: 0 10px;
-  font-size: 18px;
-}
+  .filter-item {
+    width: 260px;
+    height: 40px;
+    padding: 0 20px;
+    margin: 0 10px;
+    font-size: 18px;
+  }
 }
