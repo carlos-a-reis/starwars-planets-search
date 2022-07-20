@@ -1,13 +1,13 @@
-import Alderaan from '../images/Alderaan.PNG';
-import Bespin from '../images/Bespin.PNG';
-import Coruscant from '../images/Coruscant.PNG';
-import Dagobah from '../images/Dagobah.PNG';
-import Endor from '../images/Endor.PNG';
-import Hoth from '../images/Hoth.PNG';
-import Kamino from '../images/Kamino.PNG';
-import Naboo from '../images/Naboo.PNG';
-import Tatooine from '../images/Tatooine.PNG';
-import YavinIV from '../images/Yavin IV.PNG';
+import Alderaan from '../images/Alderaan.png';
+import Bespin from '../images/Bespin.png';
+import Coruscant from '../images/Coruscant.png';
+import Dagobah from '../images/Dagobah.png';
+import Endor from '../images/Endor.png';
+import Hoth from '../images/Hoth.png';
+import Kamino from '../images/Kamino.png';
+import Naboo from '../images/Naboo.png';
+import Tatooine from '../images/Tatooine.png';
+import YavinIV from '../images/Yavin IV.png';
 
 const planets = () => {
   const planetsObject = {
