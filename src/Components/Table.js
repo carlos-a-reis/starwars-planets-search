@@ -1,5 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import Context from '../context/Context';
+import '../CSS/table.css';
+import planets from '../Helpers/Planets';
 
 function Table() {
   const { data, filterByName, filterByNumericValues, order } = useContext(Context);
@@ -17,11 +19,11 @@ function Table() {
       const resultFilter = filterByNumericValues.reduce((acc, filter) => (
         acc.filter((planet) => {
           switch (filter.comparison) {
-          case 'maior que':
+          case 'greater than':
             return planet[filter.column] > Number(filter.value);
-          case 'menor que':
+          case 'less than':
             return planet[filter.column] < Number(filter.value);
-          case 'igual a':
+          case 'equal to':
             return planet[filter.column] === filter.value;
           default:
             return filterPlanets;
@@ -63,45 +65,46 @@ function Table() {
   }, [order, numericFilterPlanets]);
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Rotation Period</th>
-          <th>Orbital Period</th>
-          <th>Diameter</th>
-          <th>Climate</th>
-          <th>Gravity</th>
-          <th>Terrain</th>
-          <th>Surface Water</th>
-          <th>Population</th>
-          <th>Films</th>
-          <th>Created</th>
-          <th>Edited</th>
-          <th>URL</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        { renderData.length !== undefined && renderData.map((planet) => (
-          <tr key={ planet.name }>
-            <td data-testid="planet-name">{ planet.name }</td>
-            <td>{ planet.rotation_period }</td>
-            <td>{ planet.orbital_period }</td>
-            <td>{ planet.diameter }</td>
-            <td>{ planet.climate }</td>
-            <td>{ planet.gravity }</td>
-            <td>{ planet.terrain }</td>
-            <td>{ planet.surface_water }</td>
-            <td>{ planet.population }</td>
-            <td>{ planet.films.map((film) => film) }</td>
-            <td>{ planet.created }</td>
-            <td>{ planet.edited }</td>
-            <td>{ planet.url }</td>
+    <div className="main-content">
+      <table className="main-table">
+        <thead>
+          <tr>
+            <th className="colum-title">Name</th>
+            <th className="colum-title">Rotation Period</th>
+            <th className="colum-title">Orbital Period</th>
+            <th className="colum-title">Diameter</th>
+            <th className="colum-title">Climate</th>
+            <th className="colum-title">Gravity</th>
+            <th className="colum-title">Terrain</th>
+            <th className="colum-title">Surface Water</th>
+            <th className="colum-title">Population</th>
           </tr>
-        )) }
-      </tbody>
-    </table>
+        </thead>
+
+        <tbody>
+          { console.log(planets()) }
+          { renderData.length !== undefined && renderData.map((planet) => (
+            <tr key={ planet.name }>
+              <td className="table-cel planet-name">
+                <img
+                  src={ planets()[planet.name] || planets().YavinIV }
+                  alt={ planet.name }
+                />
+                <p>{ planet.name }</p>
+              </td>
+              <td className="table-cel">{ planet.rotation_period }</td>
+              <td className="table-cel">{ planet.orbital_period }</td>
+              <td className="table-cel">{ planet.diameter }</td>
+              <td className="table-cel">{ planet.climate }</td>
+              <td className="table-cel">{ planet.gravity }</td>
+              <td className="table-cel">{ planet.terrain }</td>
+              <td className="table-cel">{ planet.surface_water }</td>
+              <td className="table-cel">{ planet.population }</td>
+            </tr>
+          )) }
+        </tbody>
+      </table>
+    </div>
   );
 }
 

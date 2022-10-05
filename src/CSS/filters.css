@@ -1,0 +1,303 @@
+/* formulario de filtros */
+.forms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* link para a página home */
+.home-link {
+  position: absolute;
+  align-self: end;
+  margin-right: 50px;
+}
+
+.arrow-home {
+  height: 25px;
+  transform: rotate(180deg);
+}
+
+/* efeito de quando o mouse passa pela seta de mudar de página */
+.arrow-home:hover {
+  transition: 0.1s;
+  transform: scale(1.3) rotate(180deg);
+}
+
+/* filtros */
+.filter-forms {
+  display: flex;
+  flex-direction: row;
+}
+
+/* configuração de estilo dos inputs */
+.search-input, .filters input, .filters select, 
+.orders select, .orders label {
+  background-color: transparent;
+  border: 3px solid #FFE81F;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+}
+
+/* input de pesquisa por nome */
+.search-input {
+  width: 390.04px;
+  height: 32.05px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* estilo dos inputs quando o mouse passa em cima */
+.search-input:hover, .filters input:hover,
+.filter-button:hover, .remove-filters:hover,
+.filters select:hover, .orders select:hover,
+.orders label:hover, .filter-item button:hover {
+  box-shadow: inset 0 0 0.5em #FFE81F,
+  0 0 0.5em #FFE81F;
+  transition: 0.1s;
+  transform: scale(1.1);
+}
+
+/* estilo dos inputs quando estão selecionados */
+.search-input:focus, .filters input:focus {
+  box-shadow: inset 0 0 0.5em #FFE81F,
+  0 0 0.5em #FFE81F;
+  transform: scale(1.1);
+  outline: #FFE81F;
+}
+
+.filters select:focus, .filters select:focus, .orders select:focus {
+  outline: #FFE81F;
+}
+
+/* blocos com os filtros e ordenadores */
+.filters, .orders {
+  width: 250px;
+  height: 85px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.filters {
+  margin-right: 25px;
+}
+
+.orders {
+  margin-left: 25px;
+  
+}
+
+/* configuração dos elementos do bloco de filtros */
+.filters input {
+  width: 242.02px;
+  height: 27.06px;
+  margin: -0;
+  text-align: center;
+}
+
+/* filtros desabilitados */
+.filters input:disabled, .filters select:disabled, .filter-button:disabled {
+  transform: none;
+  opacity: 50%;
+}
+
+/* estilo dos selects */
+.select-filter {
+  width: 135px;
+  height: 35px;
+  text-align: center;
+}
+
+.select-comparation {
+  width: 105px;
+  height: 35px;
+  text-align: center;
+}
+
+.filters select option {
+  background-color: black;
+}
+
+/* configuração dos elementos do bloco de ordenadores */
+.orders select {
+  width: 250px;
+  height: 35px;
+  text-align: center;
+}
+
+.orders select option {
+  background-color: black;
+}
+
+.orders label {
+  width: 114.04px;
+  height: 29.04px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.orders label input {
+  margin-right: 0;
+  accent-color: #FFE81F;
+}
+
+/* botões de filtragem e ordenagem */
+.filter-button {
+  width: 85px;
+  height: 85px;
+  margin: 0px 15px;
+  background-color: transparent;
+  color: white;
+  font-size: 22px;
+  border: 3px solid #FFE81F;
+  border-radius: 5px;
+}
+
+/* botão de remover filtros */
+.remove-filters {
+  width: 160px;
+  height: 40px;
+  margin: 20px 0px;
+  background-color: transparent;
+  color: white;
+  font-size: 18px;
+  border: 3px solid #FFE81F;
+  border-radius: 5px;
+}
+
+/* lista dos filtros aplicados */
+.filter-list {
+  align-self: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  height: 35px;
+}
+
+.filter-item {
+  width: 220px;
+  height: 35px;
+  margin: 6px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  border: 1px solid #FFE81F;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin: 0 5px;
+}
+
+/* botão de deletar o filtro */
+.filter-item button {
+  background-color: transparent;
+  border: 1px solid #FFE81F;
+  border-radius: 5px;
+  color: #FFE81F;
+}
+
+/* responsividade para telas com largura maior ou igual a 2000px */
+@media screen and (min-width: 2000px) {
+  /* formulario de filtros */
+  .forms {
+    margin-top: 45px;
+    margin-bottom: 40px;
+  }
+
+  /* link para a página home */
+  .home-link {
+    margin-right: 90px;
+  }
+
+  /* configuração de estilo dos inputs */
+  .search-input, .filters input, .filters select, 
+  .orders select, .orders label {
+    font-size: 22px;
+  }
+
+  /* input de pesquisa por nome */
+  .search-input {
+    width: 670.01px;
+    height: 50px;
+    margin-bottom: 45px;
+    font-size: 24px;
+  }
+
+  /* blocos com os filtros e ordenadores */
+  .filters, .orders {
+    width: 420px;
+    height: 110px;
+  }
+
+  .filters {
+    margin-right: 45px;
+  }
+
+  .orders {
+    margin-left: 45px;
+  }
+
+  /* configuração dos elementos do bloco de filtros */
+  .filters input {
+    width: 422.02px;
+    height: 37.06px;
+  }
+
+  /* estilo dos selects */
+  .select-filter {
+    width: 205px;
+    height: 45px;
+  }
+
+  .select-comparation {
+    width: 205px;
+    height: 45px;
+  }
+
+  /* configuração dos elementos do bloco de ordenadores */
+  .orders select {
+    width: 420px;
+    height: 45px;
+  }
+
+  .orders label {
+    width: 199.04px;
+    height: 39.04px;
+  }
+
+  /* botões de filtragem e ordenagem */
+  .filter-button {
+    width: 115px;
+    height: 115px;
+    margin: 0px 25px;
+    font-size: 28px;
+  }
+
+  /* botão de remover filtros */
+  .remove-filters {
+    width: 280px;
+    height: 60px;
+    margin: 25px 0px 40px 0px;
+    font-size: 24px;
+  }
+
+  /* lista dos filtros aplicados */
+  .filter-list {
+    height: 40px;
+  }
+
+  .filter-item {
+    width: 260px;
+    height: 40px;
+    padding: 0 20px;
+    margin: 0 10px;
+    font-size: 18px;
+  }
+}

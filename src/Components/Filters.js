@@ -1,5 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import Context from '../context/Context';
+import '../CSS/filters.css';
+import arrow from '../images/arrow.png';
 
 function Filters() {
   const {
@@ -20,14 +22,13 @@ function Filters() {
   const [optionsTypeDisabled, setOptionsTypeDisabled] = useState(false);
 
   const [type, setType] = useState(optionsType[0]);
-  const [operator, setOperator] = useState('maior que');
+  const [operator, setOperator] = useState('greater than');
   const [value, setValue] = useState(0);
 
   const [sortType, setSortType] = useState('population');
   const [sortOrder, setSortOrder] = useState('ASC');
 
-  const saveFilter = (event) => {
-    event.preventDefault();
+  const saveFilter = () => {
     setFilterByNumericValues([
       ...filterByNumericValues,
       {
@@ -67,110 +68,122 @@ function Filters() {
   }, [optionsType]);
 
   return (
-    <div>
+    <div className="forms">
+
+      { /* link para a home da página */ }
+      <a href="#home-page" className="home-link">
+        <img className="arrow-home" src={ arrow } alt="arrow" />
+      </a>
+
       <input
+        className="search-input"
         type="text"
         onChange={ ({ target }) => setFilterByName({ name: target.value }) }
-        data-testid="name-filter"
       />
-      <form>
 
-        <select
-          value={ type }
-          onChange={ ({ target }) => setType(target.value) }
-          disabled={ optionsTypeDisabled }
-          data-testid="column-filter"
-        >
-          { optionsType.map((typeOption) => (
-            <option key={ typeOption }>{ typeOption }</option>
-          )) }
-        </select>
+      <div className="filter-forms">
 
-        <select
-          value={ operator }
-          onChange={ ({ target }) => setOperator(target.value) }
-          data-testid="comparison-filter"
-        >
-          <option>maior que</option>
-          <option>menor que</option>
-          <option>igual a</option>
-        </select>
+        {/* formulario de filtros */}
+        <form className="filters">
+          <input
+            type="text"
+            maxLength="15"
+            value={ value }
+            onChange={ ({ target }) => setValue(target.value) }
+            disabled={ optionsTypeDisabled }
+          />
 
-        <input
-          type="number"
-          value={ value }
-          onChange={ ({ target }) => setValue(target.value) }
-          data-testid="value-filter"
-        />
+          <select
+            className="select-filter"
+            value={ type }
+            onChange={ ({ target }) => setType(target.value) }
+            disabled={ optionsTypeDisabled }
+          >
+            { optionsType.map((typeOption) => (
+              <option key={ typeOption }>{ typeOption }</option>
+            )) }
+          </select>
 
+          <select
+            className="select-comparation"
+            value={ operator }
+            onChange={ ({ target }) => setOperator(target.value) }
+            disabled={ optionsTypeDisabled }
+          >
+            <option>greater than</option>
+            <option>less than</option>
+            <option>equal to</option>
+          </select>
+
+        </form>
         <button
-          type="submit"
+          className="filter-button"
+          type="button"
           onClick={ saveFilter }
           disabled={ optionsTypeDisabled }
-          data-testid="button-filter"
         >
-          Filtrar
+          Filter
         </button>
 
-      </form>
-
-      <form>
-        <select
-          onChange={ ({ target }) => setSortType(target.value) }
-          data-testid="column-sort"
-        >
-          { options.map((option) => <option key={ option }>{ option }</option>) }
-        </select>
-
-        <label htmlFor="ASC">
-          Ascendente
-          <input
-            type="radio"
-            value="ASC"
-            id="ASC"
-            name="sort"
-            onClick={ ({ target }) => setSortOrder(target.value) }
-            data-testid="column-sort-input-asc"
-          />
-        </label>
-
-        <label htmlFor="DESC">
-          Descendente
-          <input
-            type="radio"
-            value="DESC"
-            id="DESC"
-            name="sort"
-            onClick={ ({ target }) => setSortOrder(target.value) }
-            data-testid="column-sort-input-desc"
-          />
-        </label>
-
+        {/* formulario de ordem */}
         <button
+          className="filter-button"
           type="button"
           onClick={ () => setOrder({ column: sortType, sort: sortOrder }) }
-          data-testid="column-sort-button"
         >
-          Ordenar
+          Order
         </button>
 
-      </form>
+        <form className="orders">
+          <select
+            onChange={ ({ target }) => setSortType(target.value) }
+          >
+            { options.map((option) => <option key={ option }>{ option }</option>) }
+          </select>
 
+          <label htmlFor="ASC">
+            Ascending
+            <input
+              type="radio"
+              value="ASC"
+              id="ASC"
+              name="sort"
+              onClick={ ({ target }) => setSortOrder(target.value) }
+            />
+          </label>
+
+          <label htmlFor="DESC">
+            Descending
+            <input
+              type="radio"
+              value="DESC"
+              id="DESC"
+              name="sort"
+              onClick={ ({ target }) => setSortOrder(target.value) }
+            />
+          </label>
+
+        </form>
+      </div>
+
+      {/* remover todos os filtros */}
       <button
+        className="remove-filters"
         type="button"
         onClick={ () => deleteFilter('all') }
-        data-testid="button-remove-filters"
       >
-        Remover Filtros
+        Remove Filters
       </button>
 
-      <ul>
+      {/* lista de filtros */}
+      <ul className="filter-list">
         { filterByNumericValues !== undefined && filterByNumericValues
           .map((filter) => (
-            <li key={ filter.column } data-testid="filter">
-              <p>
-                {`${filter.column} ${filter.comparison} ${filter.value}`}
-              </p>
+            <li
+              className="filter-item"
+              key={ filter.column }
+            >
+              {`${filter.column} ${filter.comparison} ${filter.value}`}
               <button
                 type="button"
                 onClick={ () => deleteFilter(filter.column) }

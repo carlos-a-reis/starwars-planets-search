@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import './CSS/App.css';
 import Context from './context/Context';
 import Filters from './Components/Filters';
 import Table from './Components/Table';
 import fetchPlanets from './Helpers/FetchPlanets';
+import HomePage from './Components/HomePage';
 
 function App() {
   const [data, setData] = useState({});
@@ -46,10 +47,15 @@ function App() {
   }, [data, filterByName, filterByNumericValues, order]);
 
   return (
-    <Context.Provider value={ value }>
-      <Filters />
-      <Table />
-    </Context.Provider>
+    <main className="App">
+      <HomePage />
+      <Context.Provider value={ value }>
+        <div className="planets-search" id="planets-search">
+          <Filters />
+          <Table />
+        </div>
+      </Context.Provider>
+    </main>
   );
 }
 
