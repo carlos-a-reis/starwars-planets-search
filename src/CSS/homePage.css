@@ -83,8 +83,8 @@
   }
 }
 
-/* responsividade para telas com largura maior ou igual a 2000px */
-@media screen and (min-width: 1024px) {
+/* responsividade para telas com largura maior ou igual a 1050px */
+@media screen and (min-width: 1050px) {
  /* logo da página */
 .star-img {
   width: 1000px;

@@ -109,24 +109,8 @@ function Filters() {
           </select>
 
         </form>
-        <button
-          className="filter-button"
-          type="button"
-          onClick={ saveFilter }
-          disabled={ optionsTypeDisabled }
-        >
-          Filter
-        </button>
 
         {/* formulario de ordem */}
-        <button
-          className="filter-button"
-          type="button"
-          onClick={ () => setOrder({ column: sortType, sort: sortOrder }) }
-        >
-          Order
-        </button>
-
         <form className="orders">
           <select
             onChange={ ({ target }) => setSortType(target.value) }
@@ -159,14 +143,32 @@ function Filters() {
         </form>
       </div>
 
-      {/* remover todos os filtros */}
-      <button
-        className="remove-filters"
-        type="button"
-        onClick={ () => deleteFilter('all') }
-      >
-        Remove Filters
-      </button>
+      <div className="buttons">
+        <button
+          className="filter-button"
+          type="button"
+          onClick={ saveFilter }
+          disabled={ optionsTypeDisabled }
+        >
+          Filter
+        </button>
+
+        <button
+          className="filter-button"
+          type="button"
+          onClick={ () => setOrder({ column: sortType, sort: sortOrder }) }
+        >
+          Order
+        </button>
+        {/* remover todos os filtros */}
+        <button
+          className="remove-filters"
+          type="button"
+          onClick={ () => deleteFilter('all') }
+        >
+          Remove Filters
+        </button>
+      </div>
 
       {/* lista de filtros */}
       <ul className="filter-list">
