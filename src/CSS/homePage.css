@@ -1,32 +1,24 @@
 /* página inicial */
 .home-page {
-  width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
 /* logo da página */
 .star-img {
-  height: 200px;
-  align-self: center;
-  position: absolute;
-  margin-top: -100px;
+  width: 340px;
   animation: bottom-to-top 14s infinite;
 }
 
 .wars-img {
-  height: 200px;
-  align-self: center;
-  position: absolute;
-  margin-top: 100px;
+  width: 340px;
   animation: top-to-bottom 14s infinite;
 }
 
 .planets-search-img {
-  height: 44px;
-  align-self: center;
-  position: absolute;
+  width: 340px;
   opacity: 1;
   animation: appear 14s infinite;
 }
@@ -91,37 +83,18 @@
   }
 }
 
-
-/* botão que leva para a página da tabela */
-.table-link {
-  align-self: end;
-  margin-bottom: 50px;
-}
-
-.arrow-table {
-  height: 25px;
-}
-
-/* efeito de quando o mouse passa pela seta de mudar de página */
-.arrow-table:hover {
-  transition: 0.1s;
-  transform: scale(1.3);
-}
-
 /* responsividade para telas com largura maior ou igual a 2000px */
-@media screen and (min-width: 2000px) {
+@media screen and (min-width: 1024px) {
  /* logo da página */
 .star-img {
-  height: 300px;
-  margin-top: -150px;
+  width: 1000px;
 }
 
 .wars-img {
-  height: 300px;
-  margin-top: 150px;
+  width: 1000px;
 }
 
 .planets-search-img {
-  height: 66px;
+  width: 1000px;
 }
 }
