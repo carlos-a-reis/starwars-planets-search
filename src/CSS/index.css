@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+	background-image: url("../images/Background.PNG");
 }
 
 code {
@@ -60,4 +61,5 @@ table {
 html {
   scroll-behavior: smooth;
 	overflow-x: hidden;
+	height: 100%;
 }

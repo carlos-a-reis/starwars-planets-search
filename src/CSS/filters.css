@@ -194,8 +194,8 @@
   color: #FFE81F;
 }
 
-/* responsividade para telas com largura maior ou igual a 1050px */
-@media screen and (min-width: 1050px) {
+/* responsividade para telas com largura maior ou igual a 1060px */
+@media screen and (min-width: 1060px) {
   /* formulario de filtros */
   .forms {
     margin-top: 45px;
