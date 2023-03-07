@@ -1,16 +1,28 @@
-# 🚧 README em construção 🚧
+# Star Wars Planets Search
 
-<!-- Olá, Tryber!
+## Contexto
 
-Esse é apenas um arquivo inicial para o README do seu projeto.
+Este projeto é uma aplicação Frontend que consulta uma API externa para construir uma tabela onde o usuário pode ver dados dos planetas do universo de Star Wars.
 
-É essencial que você preencha esse documento por conta própria, ok?
+Além de ver a imagem de cada planeta com algumas informações como seu nome, gravidade, diâmetro e população o usuário também pode utilizar diversos filtros de pesquisa para retornar os planetas correspondentes aos mesmos.
 
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
+## Tecnologias usadas
 
-⚠️ IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
+Frontend:
+> Desenvolvido usando: ReactJS, Context API, React Hooks, HTML, CSS
 
--->
+## Rodando o Projeto
+
+### Instalando Dependências
+
+>Na raiz do diretório:
+
+```bash
+npm install
+```
+
+### Executando a Aplicação
+
+```bash
+npm start
+```
