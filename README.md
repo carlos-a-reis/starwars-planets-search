@@ -8,21 +8,33 @@ Além de ver a imagem de cada planeta com algumas informações como seu nome, g
 
 ## Tecnologias usadas
 
-Frontend:
-> Desenvolvido usando: ReactJS, Context API, React Hooks, HTML, CSS
+> [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [ReactJS](https://reactjs.org/), [Context API](https://reactjs.org/docs/context.html), [React Hooks](https://reactjs.org/docs/hooks-intro.html), [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML), [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
 
-## Rodando o Projeto
+## Como executar o projeto
 
-### Instalando Dependências
+Para executar o projeto, siga os passos abaixo:
 
->Na raiz do diretório:
+1. Clone o repositório em sua máquina:
 
 ```bash
+git clone git@github.com:carlos-a-reis/starwars-planets-search.git
+```
+
+2. Instale as dependências do projeto:
+
+```bash
+cd starwars-planets-search
 npm install
 ```
 
-### Executando a Aplicação
+3. Execute o projeto:
 
 ```bash
 npm start
+```
+
+4. Acesse o projeto em seu navegador:
+
+```bash
+http://localhost:3000
 ```
