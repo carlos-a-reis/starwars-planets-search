@@ -9,18 +9,18 @@
 /* logo da página */
 .star-img {
   width: 340px;
-  animation: bottom-to-top 14s infinite;
+  animation: bottom-to-top 10s -1s infinite;
 }
 
 .wars-img {
   width: 340px;
-  animation: top-to-bottom 14s infinite;
+  animation: top-to-bottom 10s -1s infinite;
 }
 
 .planets-search-img {
   width: 340px;
   opacity: 1;
-  animation: appear 14s infinite;
+  animation: appear 10s -1s infinite;
 }
 
 /* animação da logo */

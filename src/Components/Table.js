@@ -82,7 +82,6 @@ function Table() {
         </thead>
 
         <tbody>
-          { console.log(planets()) }
           { renderData.length !== undefined && renderData.map((planet) => (
             <tr key={ planet.name }>
               <td className="table-cel planet-name">
