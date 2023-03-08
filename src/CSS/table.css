@@ -1,19 +1,13 @@
 /* div contando a tabela e a scrollbar */
 .main-content {
-  width: 1400px;
-  height: 430px;
-  margin-bottom: 20px;
-  overflow-y: scroll;
+  margin-bottom: 30px;
+  width: 100%;
+  overflow-x: scroll;
 }
 
 /* função de bloquear os efeitos do ponteiro do mouse */
 .colum-title, .table-cel {
   pointer-events: none;
-}
-
-/* espaço para aparecer o primeiro item da tabela */
-.main-table {
-  margin-top: 80px;
 }
 
 /* linha header da tabela */
@@ -22,25 +16,22 @@
   color: black;
   text-align: center;
   font-weight: bold;
-  position: absolute;
-  margin-top: -80px;
 }
 
 .colum-title {
-  width: 154.4px;
+  min-width: 220px;
   height: 75px;
   text-align: center;
   vertical-align: middle;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 /* linhas da tabela */
 .table-cel {
-  width: 154.4px;
   text-align: center;
   vertical-align: middle;
-  font-size: 18px;
-  padding: 10px 0; 
+  font-size: 20px;
+  padding: 20px 0; 
 }
 
 /* coluna com os nomes e imagens dos planetas */
@@ -53,14 +44,14 @@
 
 .planet-name img {
   grid-row: 1/4;
-  grid-column: 1/3;
-  width: 100px;
-  height: 100px;
+  grid-column: 1/4;
+  justify-self: center;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
 }
 
 .planet-name p {
-  font-size: 20px;
   font-weight: bold;
   background-color: black;
   grid-row: 2/3;
@@ -76,10 +67,7 @@
 /* estilo da scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  margin-block-start: 82px;
+  height: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -91,44 +79,32 @@
   background: #CCBA18
 }
 
-/* responsividade para telas com largura maior ou igual a 2000px */
-@media screen and (min-width: 2000px) {
+/* responsividade para telas com largura maior ou igual a 1300px */
+@media screen and (min-width: 1300px) {
   /* div contando a tabela e a scrollbar */
   .main-content {
-    width: 1900px;
-    height: 590px;
-  }
-
-  /* espaço para aparecer o primeiro item da tabela */
-  .main-table {
-    margin-top: 80px;
-  }
-
-  /* linha header da tabela */
-  .main-table thead tr {
-    margin-top: -80px;
+    width: 100%;
   }
 
   .colum-title {
-    width: 211.1px;
+    min-width: 250px;
     height: 80px;
     font-size: 26px;
   }
 
   /* linhas da tabela */
   .table-cel {
-    width: 211.1px;
     font-size: 24px;
     padding: 25px 0; 
   }
 
   /* coluna com os nomes e imagens dos planetas */
   .planet-name img {
-    width: 130px;
-    height: 130px;
+    width: 150px;
+    height: 150px;
   }
 
   .planet-name p {
-    font-size: 28px;
+    font-size: 26px;
   } 
 }

@@ -13,6 +13,7 @@ function App() {
   const [filterByName, setFilterByName] = useState({ name: '' });
   const [filterByNumericValues, setFilterByNumericValues] = useState([]);
   const [order, setOrder] = useState({ column: 'name', sort: 'ASC' });
+  const TIMEOUT = 5000;
 
   useEffect(() => {
     const getData = async () => {
@@ -45,6 +46,13 @@ function App() {
       });
     }
   }, [data, filterByName, filterByNumericValues, order]);
+
+  setTimeout(() => {
+    if (data.length !== 0) {
+      const component = document.getElementById('planets-search');
+      component.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, TIMEOUT);
 
   return (
     <main className="App">

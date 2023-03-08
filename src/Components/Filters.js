@@ -1,7 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import Context from '../context/Context';
 import '../CSS/filters.css';
-import arrow from '../images/arrow.png';
 
 function Filters() {
   const {
@@ -69,12 +68,6 @@ function Filters() {
 
   return (
     <div className="forms">
-
-      { /* link para a home da página */ }
-      <a href="#home-page" className="home-link">
-        <img className="arrow-home" src={ arrow } alt="arrow" />
-      </a>
-
       <input
         className="search-input"
         type="text"
@@ -116,24 +109,8 @@ function Filters() {
           </select>
 
         </form>
-        <button
-          className="filter-button"
-          type="button"
-          onClick={ saveFilter }
-          disabled={ optionsTypeDisabled }
-        >
-          Filter
-        </button>
 
         {/* formulario de ordem */}
-        <button
-          className="filter-button"
-          type="button"
-          onClick={ () => setOrder({ column: sortType, sort: sortOrder }) }
-        >
-          Order
-        </button>
-
         <form className="orders">
           <select
             onChange={ ({ target }) => setSortType(target.value) }
@@ -166,14 +143,32 @@ function Filters() {
         </form>
       </div>
 
-      {/* remover todos os filtros */}
-      <button
-        className="remove-filters"
-        type="button"
-        onClick={ () => deleteFilter('all') }
-      >
-        Remove Filters
-      </button>
+      <div className="buttons">
+        <button
+          className="filter-button"
+          type="button"
+          onClick={ saveFilter }
+          disabled={ optionsTypeDisabled }
+        >
+          Filter
+        </button>
+
+        <button
+          className="filter-button"
+          type="button"
+          onClick={ () => setOrder({ column: sortType, sort: sortOrder }) }
+        >
+          Order
+        </button>
+        {/* remover todos os filtros */}
+        <button
+          className="remove-filters"
+          type="button"
+          onClick={ () => deleteFilter('all') }
+        >
+          Remove Filters
+        </button>
+      </div>
 
       {/* lista de filtros */}
       <ul className="filter-list">
