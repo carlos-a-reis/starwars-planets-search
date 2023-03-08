@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/starwars-planets-search/static/css/main.51765856.css",
+    "main.js": "/starwars-planets-search/static/js/main.72ccf27f.js",
+    "static/media/Background.PNG": "/starwars-planets-search/static/media/Background.ca29ac5253fc83bf8618.PNG",
+    "static/media/Coruscant.png": "/starwars-planets-search/static/media/Coruscant.be170da8218884b89ae4.png",
+    "static/media/Alderaan.png": "/starwars-planets-search/static/media/Alderaan.caf72159e729e1fb8e5e.png",
+    "static/media/Dagobah.png": "/starwars-planets-search/static/media/Dagobah.82a0555a7b3d3c5da00e.png",
+    "static/media/Hoth.png": "/starwars-planets-search/static/media/Hoth.44b2c6294dabfca8cfd1.png",
+    "static/media/Bespin.png": "/starwars-planets-search/static/media/Bespin.734e413624b37700eac7.png",
+    "static/media/Yavin IV.png": "/starwars-planets-search/static/media/Yavin IV.da03bad461946c2b9c29.png",
+    "static/media/Kamino.png": "/starwars-planets-search/static/media/Kamino.a626b35bd6e8f7c9dc32.png",
+    "static/media/Tatooine.png": "/starwars-planets-search/static/media/Tatooine.c5accddf47851cfde333.png",
+    "static/media/Naboo.png": "/starwars-planets-search/static/media/Naboo.ca0ee7030cfb948ef4ff.png",
+    "static/media/Endor.png": "/starwars-planets-search/static/media/Endor.622fa2f84187e796a357.png",
+    "static/media/wars.png": "/starwars-planets-search/static/media/wars.448b55e70e59de0f7d66.png",
+    "static/media/planets-search.png": "/starwars-planets-search/static/media/planets-search.ba61c7b401c70be704c8.png",
+    "static/media/star.png": "/starwars-planets-search/static/media/star.f2881229f43f68cda01f.png",
+    "index.html": "/starwars-planets-search/index.html",
+    "main.51765856.css.map": "/starwars-planets-search/static/css/main.51765856.css.map",
+    "main.72ccf27f.js.map": "/starwars-planets-search/static/js/main.72ccf27f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.51765856.css",
+    "static/js/main.72ccf27f.js"
+  ]
+}
