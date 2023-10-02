@@ -19,7 +19,6 @@
       "!src/index.js"
     ]
   },
-  "homepage": "https://carlos-a-reis.github.io/starwars-planets-search",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
